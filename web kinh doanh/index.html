@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Phát triển Web Kinh doanh</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- A: MENU -->
+    <header class="header">
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="home.html" target="contentFrame">
+                        Trang chủ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">Góc học tập</a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="html_javascript.html"
+                               target="contentFrame">
+                                HTML & Javascript
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="style.html"
+                               target="contentFrame">
+                                Style
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="xml_dom.html"
+                               target="contentFrame">
+                                XML & DOM
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="json.html"
+                               target="contentFrame">
+                                JSON
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Tin tức</a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="news.html"
+                               target="contentFrame">
+                                Tin tức giáo dục
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="forecast.html"
+                               target="contentFrame">
+                                Dự báo
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="register.html" target="contentFrame">
+                        Đăng ký
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- B: SIDEBAR + C: CONTENT -->
+    <main class="main-container">
+
+        <aside class="sidebar">
+            <div class="student">
+                <img src="images/hinh.png
+                " alt="Avatar">
+                <h3>Nguyễn Nhã Uyên</h3>
+            </div>
+        </aside>
+
+        <section class="content">
+            <iframe
+                name="contentFrame"
+                src="home.html"
+                title="Nội dung website">
+            </iframe>
+        </section>
+
+    </main>
+
+
+    <!-- D: FOOTER -->
+    <footer class="footer">
+        <p id="footerText"></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

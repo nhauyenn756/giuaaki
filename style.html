@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS - Style</title>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="css/style-demo.css">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .internal-example {
+            color: #16805d;
+            font-size: 23px;
+            text-align: center;
+            background-color: #e9f7f0;
+            padding: 18px;
+            border-radius: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <span class="tag">GÓC HỌC TẬP</span>
+
+        <h1>CSS - CASCADING STYLE SHEETS</h1>
+
+        <p>
+            Tìm hiểu cú pháp, ý nghĩa và ba cách sử dụng
+            CSS trong thiết kế website.
+        </p>
+    </header>
+
+
+    <!-- SECTION 1 -->
+    <section class="card">
+
+        <h2>01. TỔNG QUAN VỀ CSS</h2>
+
+        <p>
+            CSS (Cascading Style Sheets) là ngôn ngữ
+            định kiểu được sử dụng để thiết kế giao diện
+            và trình bày các thành phần HTML.
+        </p>
+
+        <h3>Cú pháp CSS</h3>
+
+<pre><code>selector {
+    property: value;
+}</code></pre>
+
+        <table>
+            <tr>
+                <th>Thành phần</th>
+                <th>Ý nghĩa</th>
+            </tr>
+
+            <tr>
+                <td>Selector</td>
+                <td>Bộ chọn phần tử HTML cần định dạng.</td>
+            </tr>
+
+            <tr>
+                <td>Property</td>
+                <td>Thuộc tính cần thay đổi.</td>
+            </tr>
+
+            <tr>
+                <td>Value</td>
+                <td>Giá trị của thuộc tính.</td>
+            </tr>
+
+            <tr>
+                <td>Declaration</td>
+                <td>Cặp thuộc tính và giá trị.</td>
+            </tr>
+        </table>
+
+    </section>
+
+
+    <!-- SECTION 2 -->
+    <section class="card">
+
+        <h2>02. INLINE CSS - CSS NỘI TUYẾN</h2>
+
+        <p>
+            Inline CSS là cách viết CSS trực tiếp trong
+            thẻ HTML thông qua thuộc tính style.
+        </p>
+
+        <h3>Cú pháp minh họa</h3>
+
+<pre><code>&lt;h2 style="color: blue; font-size: 28px;"&gt;
+    Xin chào các bạn!
+&lt;/h2&gt;</code></pre>
+
+        <h3>Kết quả hiển thị</h3>
+
+        <div class="demo-box">
+
+            <h2 style="
+                color: #176b87;
+                font-size: 28px;
+                text-align: center;
+            ">
+                Xin chào các bạn!
+            </h2>
+
+            <p class="caption">
+                Được định dạng trực tiếp bằng thuộc tính style.
+            </p>
+
+        </div>
+
+        <div class="pros-cons">
+            <div>
+                <h4>Ưu điểm</h4>
+                <p>Dễ sử dụng, áp dụng nhanh cho một phần tử.</p>
+            </div>
+
+            <div>
+                <h4>Nhược điểm</h4>
+                <p>Khó tái sử dụng và bảo trì khi mã nguồn lớn.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 3 -->
+    <section class="card">
+
+        <h2>03. INTERNAL CSS - CSS NỘI BỘ</h2>
+
+        <p>
+            Internal CSS là cách viết CSS trong thẻ style,
+            thường đặt bên trong phần head của HTML.
+        </p>
+
+        <h3>Cú pháp minh họa</h3>
+
+<pre><code>&lt;head&gt;
+    &lt;style&gt;
+        .internal-example {
+            color: green;
+            font-size: 23px;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+        <h3>Kết quả hiển thị</h3>
+
+        <div class="demo-box">
+
+            <h2 class="internal-example">
+                Xin chào các bạn!
+            </h2>
+
+            <p class="caption">
+                Được định dạng bởi thẻ style trong head.
+            </p>
+
+        </div>
+
+        <div class="pros-cons">
+            <div>
+                <h4>Ưu điểm</h4>
+                <p>Có thể định dạng nhiều phần tử trong cùng một trang.</p>
+            </div>
+
+            <div>
+                <h4>Nhược điểm</h4>
+                <p>Khó dùng chung CSS cho nhiều trang HTML.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 4 -->
+    <section class="card">
+
+        <h2>04. EXTERNAL CSS - CSS BÊN NGOÀI</h2>
+
+        <p>
+            External CSS là cách viết CSS trong một file
+            riêng có phần mở rộng .css, sau đó liên kết
+            với tài liệu HTML.
+        </p>
+
+        <h3>Cấu trúc thư mục</h3>
+
+<pre><code>project/
+│
+├── style.html
+│
+└── css/
+    └── style-demo.css</code></pre>
+
+        <h3>Liên kết file CSS trong HTML</h3>
+
+<pre><code>&lt;link rel="stylesheet"
+      href="css/style-demo.css"&gt;</code></pre>
+
+        <h3>Nội dung file style-demo.css</h3>
+
+<pre><code>.external-example {
+    color: #a044a4;
+    font-size: 23px;
+    text-align: center;
+    background-color: #f7edfa;
+    padding: 18px;
+}</code></pre>
+
+        <h3>Kết quả hiển thị</h3>
+
+        <div class="demo-box">
+
+            <h2 class="external-example">
+                Xin chào các bạn!
+            </h2>
+
+            <p class="caption">
+                Được định dạng từ file CSS bên ngoài.
+            </p>
+
+        </div>
+
+        <div class="pros-cons">
+            <div>
+                <h4>Ưu điểm</h4>
+                <p>Dễ tái sử dụng, quản lý và bảo trì nhiều trang.</p>
+            </div>
+
+            <div>
+                <h4>Nhược điểm</h4>
+                <p>Cần quản lý file và đường dẫn chính xác.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 5 -->
+    <section class="card">
+
+        <h2>05. SO SÁNH CÁC LOẠI STYLE</h2>
+
+        <table>
+            <tr>
+                <th>Tiêu chí</th>
+                <th>Inline</th>
+                <th>Internal</th>
+                <th>External</th>
+            </tr>
+
+            <tr>
+                <td>Vị trí</td>
+                <td>Trong thẻ HTML</td>
+                <td>Thẻ style</td>
+                <td>File CSS riêng</td>
+            </tr>
+
+            <tr>
+                <td>Phạm vi</td>
+                <td>Một phần tử</td>
+                <td>Một trang</td>
+                <td>Nhiều trang</td>
+            </tr>
+
+            <tr>
+                <td>Tái sử dụng</td>
+                <td>Thấp</td>
+                <td>Trung bình</td>
+                <td>Cao</td>
+            </tr>
+
+            <tr>
+                <td>Bảo trì</td>
+                <td>Khó</td>
+                <td>Trung bình</td>
+                <td>Dễ</td>
+            </tr>
+        </table>
+
+        <div class="conclusion">
+            <h3>KẾT LUẬN</h3>
+
+            <p>
+                Inline CSS phù hợp để định dạng nhanh một phần tử.
+                Internal CSS phù hợp với website đơn giản có một trang.
+                External CSS phù hợp với website có nhiều trang,
+                giúp mã nguồn dễ quản lý, tái sử dụng và bảo trì.
+            </p>
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>

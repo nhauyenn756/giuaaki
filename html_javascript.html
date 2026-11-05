@@ -1,0 +1,323 @@
+﻿
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & Javascript</title>
+
+    <link rel="stylesheet" href="css/html_javascript.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="page-header">
+        <span class="tag">GÓC HỌC TẬP</span>
+        <h1>HTML & JAVASCRIPT</h1>
+        <p>
+            Tìm hiểu cấu trúc HTML, thành phần thẻ HTML
+            và cách sử dụng JavaScript trong phát triển web.
+        </p>
+    </div>
+
+
+    <!-- PHAN 1 -->
+    <div class="card">
+
+        <h2>01. CẤU TRÚC TỔNG QUAN HTML</h2>
+
+        <p>
+            HTML (HyperText Markup Language) là ngôn ngữ
+            đánh dấu siêu văn bản, dùng để xây dựng cấu trúc
+            và nội dung của trang web.
+        </p>
+
+        <h3>Cấu trúc cơ bản của một tài liệu HTML</h3>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Trang web&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;h1&gt;Xin chào!&lt;/h1&gt;
+        &lt;p&gt;Đây là trang web của tôi.&lt;/p&gt;
+    &lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+        <h3>Ý nghĩa các thành phần</h3>
+
+        <table>
+            <tr>
+                <th>Thành phần</th>
+                <th>Chức năng</th>
+            </tr>
+
+            <tr>
+                <td>DOCTYPE</td>
+                <td>Khai báo tài liệu HTML5.</td>
+            </tr>
+
+            <tr>
+                <td>html</td>
+                <td>Phần tử gốc của tài liệu HTML.</td>
+            </tr>
+
+            <tr>
+                <td>head</td>
+                <td>Chứa thông tin cấu hình trang web.</td>
+            </tr>
+
+            <tr>
+                <td>meta</td>
+                <td>Khai báo thông tin về tài liệu.</td>
+            </tr>
+
+            <tr>
+                <td>title</td>
+                <td>Đặt tiêu đề trên tab trình duyệt.</td>
+            </tr>
+
+            <tr>
+                <td>body</td>
+                <td>Chứa nội dung hiển thị trên trang web.</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <!-- PHAN 2 -->
+    <div class="card">
+
+        <h2>02. CÁC THÀNH PHẦN CỦA THẺ HTML</h2>
+
+        <p>
+            Một phần tử HTML thường bao gồm thẻ mở,
+            nội dung, thẻ đóng và có thể có các thuộc tính.
+        </p>
+
+        <h3>Ví dụ minh họa</h3>
+
+<pre><code>&lt;p class="intro"&gt;
+    Xin chào các bạn!
+&lt;/p&gt;</code></pre>
+
+        <table>
+            <tr>
+                <th>Khái niệm</th>
+                <th>Giải thích</th>
+                <th>Ví dụ</th>
+            </tr>
+
+            <tr>
+                <td>Tag</td>
+                <td>Thẻ HTML.</td>
+                <td>&lt;p&gt;</td>
+            </tr>
+
+            <tr>
+                <td>Element</td>
+                <td>Phần tử HTML hoàn chỉnh.</td>
+                <td>&lt;p&gt;Hello&lt;/p&gt;</td>
+            </tr>
+
+            <tr>
+                <td>Attribute</td>
+                <td>Thuộc tính bổ sung thông tin.</td>
+                <td>class="intro"</td>
+            </tr>
+
+            <tr>
+                <td>Content</td>
+                <td>Nội dung bên trong phần tử.</td>
+                <td>Xin chào các bạn!</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>Lưu ý:</b> Một số thẻ HTML là thẻ rỗng,
+            ví dụ như img và br, không cần thẻ đóng.
+        </div>
+
+    </div>
+
+
+    <!-- PHAN 3 -->
+    <div class="card">
+
+        <h2>03. INTERNAL JAVASCRIPT</h2>
+
+        <p>
+            Internal JavaScript là cách viết mã JavaScript
+            trực tiếp bên trong tài liệu HTML thông qua
+            thẻ script.
+        </p>
+
+        <h3>Ví dụ minh họa</h3>
+
+<pre><code>&lt;button onclick="showMessage()"&gt;
+    Click vào đây
+&lt;/button&gt;
+
+&lt;script&gt;
+    function showMessage() {
+        alert("Xin chào!");
+    }
+&lt;/script&gt;</code></pre>
+
+        <h3>Thực hành trực tiếp</h3>
+
+        <div class="demo-box">
+
+            <p>
+                Nhấn nút bên dưới để kiểm tra
+                Internal JavaScript.
+            </p>
+
+            <button onclick="internalJS()">
+                Thử Internal JavaScript
+            </button>
+
+            <div id="internalResult" class="result"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHAN 4 -->
+    <div class="card">
+
+        <h2>04. EXTERNAL JAVASCRIPT</h2>
+
+        <p>
+            External JavaScript là cách viết mã JavaScript
+            trong một file riêng có phần mở rộng .js,
+            sau đó liên kết với tài liệu HTML.
+        </p>
+
+        <h3>Cấu trúc thư mục</h3>
+
+<pre><code>project/
+│
+├── index.html
+│
+└── js/
+    └── external.js</code></pre>
+
+        <h3>File HTML</h3>
+
+<pre><code>&lt;button onclick="externalJS()"&gt;
+    Click vào đây
+&lt;/button&gt;
+
+&lt;script src="js/external.js"&gt;&lt;/script&gt;</code></pre>
+
+        <h3>File external.js</h3>
+
+<pre><code>function externalJS() {
+    alert("Đây là External JavaScript!");
+}</code></pre>
+
+        <div class="demo-box">
+
+            <p>
+                Nhấn nút bên dưới để kiểm tra
+                External JavaScript.
+            </p>
+
+            <button onclick="externalJS()">
+                Thử External JavaScript
+            </button>
+
+            <div id="externalResult" class="result"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHAN 5 -->
+    <div class="card">
+
+        <h2>05. SO SÁNH INTERNAL VÀ EXTERNAL JAVASCRIPT</h2>
+
+        <table>
+
+            <tr>
+                <th>Tiêu chí</th>
+                <th>Internal JS</th>
+                <th>External JS</th>
+            </tr>
+
+            <tr>
+                <td>Vị trí</td>
+                <td>Trong file HTML.</td>
+                <td>File .js riêng.</td>
+            </tr>
+
+            <tr>
+                <td>Cách khai báo</td>
+                <td>Thẻ script.</td>
+                <td>script src.</td>
+            </tr>
+
+            <tr>
+                <td>Tái sử dụng</td>
+                <td>Khó hơn.</td>
+                <td>Dễ dàng.</td>
+            </tr>
+
+            <tr>
+                <td>Quản lý</td>
+                <td>Phù hợp code nhỏ.</td>
+                <td>Dễ bảo trì và quản lý.</td>
+            </tr>
+
+            <tr>
+                <td>Ứng dụng</td>
+                <td>Trang web đơn giản.</td>
+                <td>Dự án nhiều trang.</td>
+            </tr>
+
+        </table>
+
+        <div class="note">
+            <b>Kết luận:</b> External JavaScript phù hợp
+            với các dự án lớn vì giúp tách biệt mã nguồn,
+            dễ tái sử dụng và bảo trì.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- INTERNAL JAVASCRIPT -->
+<script>
+
+    function internalJS() {
+
+        document.getElementById("internalResult").innerHTML =
+            "Internal JavaScript đang hoạt động thành công!";
+
+        alert("Xin chào! Đây là Internal JavaScript.");
+
+    }
+
+</script>
+
+
+<!-- EXTERNAL JAVASCRIPT -->
+<script src="js/external.js"></script>
+
+</body>
+</html>

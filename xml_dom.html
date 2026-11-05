@@ -1,0 +1,356 @@
+﻿
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML & DOM</title>
+
+    <link rel="stylesheet" href="css/xml_dom.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <span class="tag">GÓC HỌC TẬP</span>
+        <h1>XML & DOM</h1>
+        <p>
+            Tìm hiểu cấu trúc XML và cách sử dụng
+            JavaScript DOM để tạo bảng dữ liệu HTML.
+        </p>
+    </div>
+
+
+    <!-- PHAN 1 -->
+    <div class="card">
+
+        <h2>01. CẤU TRÚC TỔNG QUAN XML</h2>
+
+        <p>
+            XML (Extensible Markup Language) là ngôn ngữ
+            đánh dấu mở rộng được sử dụng để lưu trữ
+            và trao đổi dữ liệu có cấu trúc.
+        </p>
+
+        <h3>Ví dụ cấu trúc XML</h3>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;students&gt;
+
+    &lt;student id="SV001"&gt;
+        &lt;name&gt;Nguyen Nha Uyen&lt;/name&gt;
+        &lt;class&gt;K24416&lt;/class&gt;
+        &lt;email&gt;uyen@gmail.com&lt;/email&gt;
+    &lt;/student&gt;
+
+    &lt;student id="SV002"&gt;
+        &lt;name&gt;Tran Van A&lt;/name&gt;
+        &lt;class&gt;K24417&lt;/class&gt;
+        &lt;email&gt;a@gmail.com&lt;/email&gt;
+    &lt;/student&gt;
+
+&lt;/students&gt;</code></pre>
+
+        <h3>Các thành phần của XML</h3>
+
+        <table>
+            <tr>
+                <th>Thành phần</th>
+                <th>Ý nghĩa</th>
+            </tr>
+
+            <tr>
+                <td>XML Declaration</td>
+                <td>Khai báo phiên bản và bảng mã.</td>
+            </tr>
+
+            <tr>
+                <td>Root Element</td>
+                <td>Phần tử gốc của tài liệu XML.</td>
+            </tr>
+
+            <tr>
+                <td>Element</td>
+                <td>Phần tử chứa dữ liệu.</td>
+            </tr>
+
+            <tr>
+                <td>Attribute</td>
+                <td>Thuộc tính bổ sung thông tin.</td>
+            </tr>
+
+            <tr>
+                <td>Text</td>
+                <td>Nội dung văn bản của phần tử.</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <!-- PHAN 2 -->
+    <div class="card">
+
+        <h2>02. TÌM HIỂU DOM</h2>
+
+        <p>
+            DOM (Document Object Model) là mô hình đối tượng
+            tài liệu, biểu diễn XML hoặc HTML dưới dạng
+            cây các Node.
+        </p>
+
+        <h3>Các phương thức DOM thường sử dụng</h3>
+
+        <table>
+            <tr>
+                <th>Phương thức</th>
+                <th>Chức năng</th>
+            </tr>
+
+            <tr>
+                <td>getElementsByTagName()</td>
+                <td>Lấy các phần tử theo tên thẻ.</td>
+            </tr>
+
+            <tr>
+                <td>getAttribute()</td>
+                <td>Lấy giá trị thuộc tính.</td>
+            </tr>
+
+            <tr>
+                <td>createElement()</td>
+                <td>Tạo phần tử HTML mới.</td>
+            </tr>
+
+            <tr>
+                <td>textContent</td>
+                <td>Đọc hoặc gán nội dung văn bản.</td>
+            </tr>
+
+            <tr>
+                <td>appendChild()</td>
+                <td>Thêm phần tử con vào phần tử cha.</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <!-- PHAN 3 -->
+    <div class="card">
+
+        <h2>03. THỰC HÀNH TẠO TABLE BẰNG DOM</h2>
+
+        <p>
+            Sử dụng JavaScript DOM để đọc danh sách sinh viên
+            từ dữ liệu XML và tạo Table HTML tự động.
+        </p>
+
+        <h3>Dữ liệu XML đầu vào</h3>
+
+<pre><code>&lt;students&gt;
+    &lt;student id="SV001"&gt;
+        &lt;name&gt;Nguyen Nha Uyen&lt;/name&gt;
+        &lt;class&gt;K24416&lt;/class&gt;
+        &lt;email&gt;uyen@gmail.com&lt;/email&gt;
+    &lt;/student&gt;
+&lt;/students&gt;</code></pre>
+
+        <div class="demo-box">
+
+            <h3>Thực hành trực tiếp</h3>
+
+            <p>
+                Nhấn nút bên dưới để đọc dữ liệu XML
+                và tạo bảng HTML bằng DOM.
+            </p>
+
+            <button onclick="createTable()">
+                Đọc XML và tạo Table
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+        <div class="note">
+            <b>Lưu ý:</b> Table không được viết sẵn các hàng
+            dữ liệu trong HTML. JavaScript sẽ tự tạo
+            các phần tử Table, TR, TH và TD.
+        </div>
+
+    </div>
+
+
+    <!-- PHAN 4 -->
+    <div class="card">
+
+        <h2>04. QUY TRÌNH TẠO TABLE BẰNG DOM</h2>
+
+        <ol>
+            <li>Đọc dữ liệu XML.</li>
+            <li>Sử dụng DOM để phân tích XML.</li>
+            <li>Lấy danh sách các phần tử student.</li>
+            <li>Tạo phần tử table.</li>
+            <li>Tạo hàng tiêu đề bằng tr và th.</li>
+            <li>Tạo các hàng dữ liệu bằng tr và td.</li>
+            <li>Sử dụng appendChild() để ghép các phần tử.</li>
+            <li>Hiển thị Table lên trang web.</li>
+        </ol>
+
+    </div>
+
+</div>
+
+
+<script>
+
+// 1. KHAI BAO DU LIEU XML
+let xmlData = `
+<students>
+
+    <student id="SV001">
+        <name>Nguyen Nha Uyen</name>
+        <class>K24416</class>
+        <email>uyen@gmail.com</email>
+    </student>
+
+    <student id="SV002">
+        <name>Tran Van A</name>
+        <class>K24417</class>
+        <email>a@gmail.com</email>
+    </student>
+
+    <student id="SV003">
+        <name>Le Thi B</name>
+        <class>K24418</class>
+        <email>b@gmail.com</email>
+    </student>
+
+</students>
+`;
+
+
+// 2. HAM TAO TABLE
+function createTable() {
+
+    // Chuyen chuoi XML thanh tai lieu XML DOM
+    let parser = new DOMParser();
+
+    let xmlDoc = parser.parseFromString(
+        xmlData,
+        "text/xml"
+    );
+
+    // Kiem tra XML co loi cu phap khong
+    if (xmlDoc.getElementsByTagName("parsererror").length > 0) {
+        document.getElementById("result").textContent =
+            "Lỗi: Dữ liệu XML không hợp lệ!";
+        return;
+    }
+
+    // Lay danh sach sinh vien
+    let students = xmlDoc.getElementsByTagName("student");
+
+    // Tao bang
+    let table = document.createElement("table");
+
+    // Tao phan tieu de
+    let thead = document.createElement("thead");
+    let headerRow = document.createElement("tr");
+
+    let headers = [
+        "Mã sinh viên",
+        "Họ và tên",
+        "Lớp",
+        "Email"
+    ];
+
+    // Tao cac o tieu de
+    for (let i = 0; i < headers.length; i++) {
+
+        let th = document.createElement("th");
+
+        th.textContent = headers[i];
+
+        headerRow.appendChild(th);
+
+    }
+
+    thead.appendChild(headerRow);
+
+    table.appendChild(thead);
+
+
+    // Tao phan than bang
+    let tbody = document.createElement("tbody");
+
+
+    // Duyet tung sinh vien
+    for (let i = 0; i < students.length; i++) {
+
+        let student = students[i];
+
+        // Lay du lieu XML
+        let id = student.getAttribute("id");
+
+        let name = student.getElementsByTagName("name")[0].textContent;
+
+        let studentClass = student.getElementsByTagName("class")[0].textContent;
+
+        let email = student.getElementsByTagName("email")[0].textContent;
+
+
+        // Tao hang moi
+        let row = document.createElement("tr");
+
+
+        // Tao cac o du lieu
+        let cell1 = document.createElement("td");
+        let cell2 = document.createElement("td");
+        let cell3 = document.createElement("td");
+        let cell4 = document.createElement("td");
+
+
+        // Gan du lieu
+        cell1.textContent = id;
+        cell2.textContent = name;
+        cell3.textContent = studentClass;
+        cell4.textContent = email;
+
+
+        // Dua cac o vao hang
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+
+
+        // Dua hang vao tbody
+        tbody.appendChild(row);
+
+    }
+
+
+    // Dua tbody vao table
+    table.appendChild(tbody);
+
+
+    // Hien thi bang ra website
+    let result = document.getElementById("result");
+
+    result.innerHTML = "";
+
+    result.appendChild(table);
+
+}
+
+</script>
+
+</body>
+</html>
